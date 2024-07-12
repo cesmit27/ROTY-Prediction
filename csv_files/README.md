@@ -3,4 +3,4 @@ Winners Folder contains college stats (or international league stats) of each RO
 Rookie_Names.csv and ROTY_Winners_Names have web scraped data of each players name.
 
 
-Rookies Preprocessing and Winners Preproccessing contain stats as taken from sports-reference.com, before they are run through the processing Jupyter files
+Rookies Preprocessing and Winners Preproccessing contain stats as taken from  https://www.sports-reference.com and https://www.basketball-reference.com, before they are run through the processing Jupyter files
