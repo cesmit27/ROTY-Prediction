@@ -7,9 +7,8 @@ rookies_data = pd.read_csv(r"D:\Personal_Python_Projects\venv\Projects\NBA_ROTY_
 
 features = ['AGE', 'Draft Pick', 'YEARS', 'G', 'GS', 'MPG', 'PTS', 'AST', 'RB', 'BLK', 'STL', 'FG', 'FGA', 'FG%', '3P', '3PA', '3P%', 'FT', 'FTA', 'FT%', 'TOV', 'AST/TO', 'PF', 'SOS', 'NAT_CH']
 
-#Function to fill NaNs with median and mark original NaNs
-#(LeBron and Amare Stoudamire didn't go to college, and some stats like SOS weren't avaialble for international players)
-def fill_nan_with_median_and_mark(df, feature_list):
+#Function to fill NaNs with median and denote if the value was NaN before the median was added (LeBron James and Amare Stoudamire didn't go to college, and some stats like SOS weren't avaialble for international players)
+def fill_nan(df, feature_list):
     df_filled = df.copy()
     for feature in feature_list:
         mean_value = df[feature].mean().round(2)
@@ -17,11 +16,10 @@ def fill_nan_with_median_and_mark(df, feature_list):
         df_filled[f'{feature}_was_nan'] = df[feature].isnull().astype(int)
     return df_filled
 
-# Fill NaNs with median and mark original NaNs
-roty_data_filled = fill_nan_with_median_and_mark(roty_data, features)
-rookies_data_filled = fill_nan_with_median_and_mark(rookies_data, features)
+roty_data_filled = fill_nan(roty_data, features)
+rookies_data_filled = fill_nan(rookies_data, features)
 
-# Extract the feature values
+#Extract the feature values
 X_past_winners = roty_data_filled[features].values
 average_past_winner = np.mean(X_past_winners, axis=0)
 
