@@ -10,7 +10,7 @@ Data is sourced from https://www.sports-reference.com, https://www.basketball-re
 # UPDATE AFTER THE SEASON
 So the season is done (several months ago at this point, whoops) so I wanted to see how this model did. 
 
-TL;DR it did ok.
+## TL;DR: It did ok.
 
 The winner of the ROTY award ended up being Stephon Castle of the Spurs, congratualtions to him. The model had him ranked 17th, with the distance to past winners being 41.06. Model performance was jsut ok here.
 
